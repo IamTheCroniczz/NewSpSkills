@@ -1,4 +1,4 @@
-//nessa página cra
+
 import 'package:flutter/material.dart'; // aqui importamos todos os recursos do flutter
 
 class SegundaJanela extends StatelessWidget {
