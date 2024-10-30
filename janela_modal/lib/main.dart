@@ -32,43 +32,50 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void _navegacaosegundapagina()   { //criamos função de navegação para a proxima pagina
-  showDialog( // aqui criamos a janela mudal usando showdialog
-    context: context,
-    builder: (BuildContext context){
-      return AlertDialog( // alertdialog armazena o conteudo da janela modal
-        title: const Text("Confirme a navegação para a proxima pagina"),
-        
-       actions: [ //actions armazena os botoes e suas funcoes
-        TextButton(
-          onPressed: () {
-            Navigator.of(context).pop(); //pop fecha a janela modal caso o usuario recuse
-          },
-          style: TextButton.styleFrom( //usamos style para definir uma cor personalizada ao botao
-            foregroundColor: Colors.red, //   foregroundColor armazena a cor desejada
-          ),
-          child: const Text("recusar navegação"),
-          
-        ),
-        //aba função do botao caso o usuario aceite a navegação
-        TextButton(
-          onPressed: () {
-            Navigator.of(context).pop();// pop fecha a janela caso o usuario aceite
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SegundaJanela()), // faz a navegação para a proxima janela
-            );
-          
-          },
-          style: TextButton.styleFrom(
-            foregroundColor: Colors.green,
-          ),
-          child: const Text("confirmar"),
-        ),
-       ],
-      );
-    }
-  );
+  void _navegacaosegundapagina() {
+    //criamos função de navegação para a proxima pagina
+    showDialog(
+        // aqui criamos a janela mudal usando showdialog
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            // alertdialog armazena o conteudo da janela modal
+            title: const Text("Confirme a navegação para a proxima pagina"),
+
+            actions: [
+              //actions armazena os botoes e suas funcoes
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context)
+                      .pop(); //pop fecha a janela modal caso o usuario recuse
+                },
+                style: TextButton.styleFrom(
+                  //usamos style para definir uma cor personalizada ao botao
+                  foregroundColor:
+                      Colors.red, //   foregroundColor armazena a cor desejada
+                ),
+                child: const Text("recusar navegação"),
+              ),
+              //aba função do botao caso o usuario aceite a navegação
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context)
+                      .pop(); // pop fecha a janela caso o usuario aceite
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const SegundaJanela()), // faz a navegação para a proxima janela
+                  );
+                },
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.green,
+                ),
+                child: const Text("confirmar"),
+              ),
+            ],
+          );
+        });
   }
 
   @override
@@ -77,16 +84,20 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      drawer: Drawer( //drawer adiciona o menu lateral a pagina
+      drawer: Drawer(
+        //drawer adiciona o menu lateral a pagina
         child: ListView(
           children: [
             const DrawerHeader(
-              child: Text('Menu Lateral'),   
+              child: Text('Menu Lateral'),
             ),
-            ListTile( // usei listtile para adicionar o botão ao drawer 
+            ListTile(
+              // usei listtile para adicionar o botão ao drawer
               leading: const Icon(Icons.arrow_forward), //define o icone da seta
-              title: const Text('Ir para a próxima página'), //adiciona o texto ao drawer
-              onTap: _navegacaosegundapagina, //puxamis a função para fazer a navegação
+              title: const Text(
+                  'Ir para a próxima página'), //adiciona o texto ao drawer
+              onTap:
+                  _navegacaosegundapagina, //puxamis a função para fazer a navegação
             ),
           ],
         ),
@@ -96,7 +107,11 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-                'Clique no botão do menu lateral para ir para a próxima página'),
+              'Clique no botão do menu lateral para ir para a próxima página',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
           ],
         ),
       ),
