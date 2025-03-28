@@ -1,8 +1,8 @@
-<<<<<<< HEAD
-//nessa página cra
-=======
 
->>>>>>> 23845c096ccbf078fc325319f2de8ef15905ae7b
+//nessa página cra
+
+
+
 import 'package:flutter/material.dart'; // aqui importamos todos os recursos do flutter
 
 
